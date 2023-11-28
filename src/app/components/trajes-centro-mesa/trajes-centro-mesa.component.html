@@ -1,0 +1,113 @@
+<div class="trajes">
+    <div class="container">
+      <div class="titulos">
+        <div class="titulo">
+
+          <h1>{{Titulo}}</h1>  
+         </div>
+         <div class="botones_group">
+         <div class="botones">
+          <button (click)="openModal()" *ngIf="guest.moderator ">+</button>
+          <button>Save</button>
+         </div>
+         <div class="opciones">
+            <a routerLink="novio" [ngClass]="{'isActive':isNovio}"><button>novio</button></a>
+            <a routerLink="novia" [ngClass]="{'isActive':isNovia}"><button>novia</button></a>
+            <a routerLink="centro-mesa" [ngClass]="{'isActive':isCentro}"><button>centro de Mesa</button></a>
+           </div>
+        </div>
+      </div>
+     
+     <hr/>
+     
+      <app-novio  (sendTraje)="recibirTraje($event)" *ngIf="isNovio"></app-novio>
+      <app-novia (sendTraje)="recibirTraje($event)" *ngIf="isNovia"></app-novia>
+      <app-centro-mesa *ngIf="isCentro"></app-centro-mesa>
+
+    </div>
+</div>
+<div class="modal" id="modal" #modal>
+  <div class="infomodal">
+    <form (ngSubmit)="save(form)" #form="ngForm" class="modalform">
+      <div class="form1">
+        <label for="nombre" class="label" *ngIf="!isCentro">Nombre Del Traje</label>
+        <label for="nombre" class="label" *ngIf="isCentro">Nombre Del Centro de Mesa</label>
+        <input
+          type="text"
+          class="input"
+          name="nombre"
+          #nombre="ngModel"
+          [(ngModel)]="aux.name"
+          placeholder="Nombre "
+          required
+        />
+        <div
+          *ngIf="nombre.errors?.['required'] && nombre.touched"
+          class="invalid-name"
+        >
+          Favor colocar un Nombre 
+        </div>
+      </div>
+
+      <div class="form1">
+        <label for="nombre" class="label" *ngIf="!isCentro">Coste del Traje</label>
+        <label for="nombre" class="label" *ngIf="isCentro">Coste del Centro de Mesa</label>
+        <input
+          type="number"
+          class="input"
+          name="number"
+          #number="ngModel"
+          [(ngModel)]="aux.number"
+          minlength="2"
+          placeholder="Solo Numeros"
+          required
+        />
+        <div
+          *ngIf="number.errors?.['required'] && number.touched"
+          class="invalid-name"
+        >
+          Favor colocar Coste
+        </div>
+        <div
+          *ngIf="number.value < 0  || number.errors?.['minlength']"
+          class="invalid-name"
+        >
+          Favor colocar una Coste Valido
+        </div>
+      </div>
+      <div class="form1">
+        <label for="nombre" class="label">Descripcion </label>
+
+        <textarea
+          name="descripcion"
+          #descripcion="ngModel"
+          [(ngModel)]="aux.description"
+          class="inputarea"
+          cols="30"
+          rows="10"
+          placeholder="Descripcion "
+          required
+        ></textarea>
+        <div
+        *ngIf="descripcion.errors?.['required'] && descripcion.touched"
+        class="invalid-name"
+      >
+        Favor colocar una Descripcion
+      </div>
+      </div>
+      <div class="form1">
+        <input type="file" class="file" (change)="upload($event)" />
+      </div>
+      <div class="footerform" #footerForm>
+        <button id="closeModal" (click)="closeModal()" type="reset">
+          Close
+        </button>
+        <div>
+        <button *ngIf="editarModal" id="borrar" (click)="delete_(form)" type="button">Borrar</button>
+        <button id="saveModal"  type="submit">Save</button>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
+

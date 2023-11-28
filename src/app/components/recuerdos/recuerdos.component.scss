@@ -1,0 +1,145 @@
+@import url('https://fonts.cdnfonts.com/css/champagne-limousines');
+
+.recuerdos {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+  
+    .titulos {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .botones {
+      
+      display: flex;
+      
+      flex-grow: 1;
+      align-items: flex-end;
+      min-width: 150px;
+      justify-content: flex-end;
+      .button {
+        position:fixed;
+        top: 80%;
+        left: 80%;
+        margin: 0 10px;
+        font-family: Inter;
+        color: #434141;
+        opacity: 0.5;
+        background: #F1C376;
+        border-color: #000000;
+        width: 70px;
+        height: 70px;
+        background-image: url('../../../assets/anadir-foto.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50px;
+        border-radius: 50%;
+        transition: .4s ease-in-out;
+        box-shadow: 1px 7px 14px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+  
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  
+    .container {
+      display: grid;
+      margin: 3% 10%;
+    }
+  
+    .titulo {
+      flex-grow: 1;
+      font-family: 'Newsreader', serif;
+      font-size: 1.5em;
+      min-width: 200px;
+
+    }
+  
+    hr {
+      width: 100%;
+    }
+  
+    .informacion {
+      margin-top: 30px;
+      display: grid;
+      gap: 1rem;
+      grid-auto-rows: 22rem;
+      justify-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, minmax(250px, .75fr));
+    }
+  
+    .recuerdo{
+      width: 90%;
+      height: 330px;
+      margin: 0 1.666vw;
+      border: #cccccc solid 2px;
+      border-radius: 20px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: .3s ease;
+  
+      &:hover {
+        box-shadow: 0 0.6rem 0.4rem rgba(0, 0, 0, 0.35);
+      }
+  
+      .imagen {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+  
+      
+    }
+    .file{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: transparent;
+        padding: .3rem 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        
+      }
+
+      .file::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+
+      .file::before {
+        margin: 0;
+        font-family: Inter;
+     content: '';
+        
+        display: inline-block;
+       
+        padding: .3rem 1rem;
+        border-radius: 1rem;
+        width: 52px;
+        transition: .4s ease-in-out;
+        cursor: pointer;
+
+       
+      }
+      .file:hover::before {
+        content: '';
+          
+      }
+
+}

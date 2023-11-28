@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="texto">
+    ¡El día de la boda se aproxima!
+    <div class="nota">
+      Inicia sesión para estar al tanto de los datos relevantes
+    </div>
+  </div>
+
+  <div class="login">
+    <div class="login_input">
+      <h1>Iniciar sesión</h1>
+      <form class="form" #formlogin="ngForm" (ngSubmit)="logIn(formlogin)">
+        <div class="form1">
+          <input
+            type="email"
+            name="email"
+            #Email="ngModel"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            [(ngModel)]="email"
+            placeholder="Email"
+            onfocus="this.placeholder = ''" 
+            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'"
+            required
+          />
+          <label for="email">Email</label>
+          
+          <div *ngIf="Email.errors?.['pattern']" id="invalid-name">
+            Favor de colocar un Email valido
+          </div>
+          <div
+            *ngIf="Email.errors?.['required'] && Email.touched"
+            id="invalid-name"
+          >
+            Favor de colocar un email
+          </div>
+        </div>
+
+        <div class="form1">
+          <input
+          type="password"
+          name="password"
+          #pasword="ngModel"
+          [(ngModel)]="password"
+          placeholder="Contraseña"
+          onfocus="this.placeholder = ''" 
+          onfocus="this.placeholder = ''" onblur="this.placeholder = 'Contraseña'"
+          required
+        />
+          <label for="contraseña">Contraseña</label>
+        
+          <div
+            *ngIf="pasword.errors?.['required'] && pasword.touched"
+            id="invalid-name"
+          >
+            Favor de colocar una contraseña válida
+          </div>
+        </div>
+        <div class="footerform">
+          <button>Iniciar sesión</button>
+        </div>
+      </form>
+      <hr />
+      <div id="logInGoogle">
+        <button (click)="logInGoogle()" class="form__btnGoogle">
+          <img
+            class="logo__google"
+            src="../../../assets/icon-google.svg"
+            alt="logo"
+          />
+          Iniciar sesión con Google
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

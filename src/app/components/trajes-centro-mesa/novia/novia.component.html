@@ -1,0 +1,14 @@
+<div class="informacion">
+  <div class="traje" *ngFor="let traje of trajes" (click)="editTraje(traje)">
+    <div class="imagen">
+        <img [src]="traje.image_aux" alt="">
+
+    </div>
+    <div class="descripcion">
+        <h3>{{traje.name}}</h3>
+        <h4>{{ traje.coste | currency :'MXN' }}</h4>
+        <p>{{traje.description}} </p>
+    </div>
+  </div>
+
+</div>

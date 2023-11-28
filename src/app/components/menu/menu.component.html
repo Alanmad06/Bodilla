@@ -1,0 +1,113 @@
+<div class="menu">
+  <div class="container">
+    <div class="titulos">
+      <div class="titulo">
+        <h1>Menú</h1>
+      </div>
+      <div class="botones">
+        <button *ngIf="guest.moderator " (click)="openModal()">+</button>
+        <button>Save</button>
+      </div>
+    </div>
+
+    <hr />
+    <div class="informacion">
+    
+      <div class="platillo" *ngFor="let platillo of menu" (click)="editar(platillo)" >
+        <div class="imagen">
+          <img  [src]="platillo.image_aux" />
+        </div>
+        <div class="descripcion">
+          <h3>{{ platillo.name }}</h3>
+          <h4>{{ formatHour(platillo.hour) }}</h4>
+          <p>{{ platillo.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal" #modal>
+  <div class="infomodal">
+    <form (ngSubmit)="save(form)"  #form="ngForm" class="modalform">
+      <div class="form1">
+        <label for="nombre" class="label">Nombre Platillo</label>
+
+        <input
+          type="text"
+          class="input"
+          name="nombre"
+          #nombre="ngModel"
+          [(ngModel)]="menu_modal.name"
+          placeholder="Nombre del Platillo"
+          required
+        />
+        <div
+          *ngIf="nombre.errors?.['required'] && nombre.touched"
+          class="invalid-name"
+        >
+          Favor colocar un Nombre del Platillo
+        </div>
+      </div>
+
+      <div class="form1">
+        <label for="nombre" class="label">Horario del Platillo</label>
+
+        <input
+          type="number"
+          class="input"
+          name="hora"
+          #hora="ngModel"
+          [(ngModel)]="menu_modal.hour"
+          maxlength="2"
+          placeholder="Solo Numeros"
+          required
+        />
+        <div
+          *ngIf="hora.errors?.['required'] && hora.touched"
+          class="invalid-name"
+        >
+          Favor colocar una Hora
+        </div>
+        <div
+          *ngIf="hora.value < 0 || hora.value >24 || hora.errors?.['maxlength']"
+          class="invalid-name"
+        >
+          Favor colocar una Hora Valida
+        </div>
+      </div>
+      <div class="form1">
+        <label for="nombre" class="label">Descripcion del Platillo</label>
+
+        <textarea
+          name="descripcion"
+          #descripcion="ngModel"
+          [(ngModel)]="menu_modal.description"
+          class="inputarea"
+          cols="30"
+          rows="10"
+          placeholder="Descripcion del Platillo"
+          required
+        ></textarea>
+        <div
+        *ngIf="descripcion.errors?.['required'] && descripcion.touched"
+        class="invalid-name"
+      >
+        Favor colocar una Descripcion
+      </div>
+      </div>
+      <div class="form1">
+        <input type="file" class="file" (change)="upload($event)" />
+      </div>
+      <div class="footerform" #footerForm>
+        <button id="closeModal" (click)="closeModal()" type="reset">
+          Close
+        </button>
+        <div>
+        <button *ngIf="editarModal" id="borrar" (click)="delete_(form)" type="button">Borrar</button>
+        <button id="saveModal"  type="submit">Save</button>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>

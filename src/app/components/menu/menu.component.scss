@@ -1,0 +1,276 @@
+.menu {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+  
+    .titulos {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .botones {
+      
+      display: flex;
+      
+      flex-grow: 1;
+      align-items: flex-end;
+      min-width: 150px;
+      justify-content: flex-end;
+      button {
+        margin: 0 10px;
+        font-family: Inter;
+        color: #434141;
+        opacity: 0.5;
+        background: #F1C376;
+        border-color: #9c9a9a;
+        padding: .3rem 1rem;
+        border-radius: 1rem;
+        transition: .4s ease-in-out;
+        box-shadow: 1px 7px 14px 0px rgba(0, 0, 0, .5);
+        cursor: pointer;
+  
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  
+    .container {
+      display: grid;
+      margin: 3% 10%;
+    }
+  
+    .titulo {
+      flex-grow: 1;
+      font-family: 'Newsreader', serif;
+      font-size: 1.5em;
+      min-width: 200px;
+
+    }
+  
+    hr {
+      width: 100%;
+    }
+  
+    .informacion {
+      margin-top: 30px;
+      display: grid;
+      gap: 1rem;
+      grid-auto-rows: 22rem;
+      justify-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, minmax(250px, .75fr));
+    }
+  
+    .platillo {
+      width: 90%;
+      height: 330px;
+      margin: 0 1.666vw;
+      border: #cccccc solid 2px;
+      border-radius: 20px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: .3s ease;
+  
+      &:hover {
+        box-shadow: 0 0.6rem 0.4rem rgba(0, 0, 0, 0.35);
+      }
+  
+      .imagen {
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+  
+      .descripcion {
+        height: 40%;
+        padding: 0 10px;
+        padding-bottom: 10px;
+        padding-top: 4px;
+        background-color: #e5e5e2;
+        font-family: Inter, sans-serif;
+  
+        h3 {
+          margin: 0;
+        }
+  
+        h4 {
+          margin-top: 4px;
+          color: #426B1F;
+        }
+      }
+    }
+  }
+  
+  .modal {
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+    z-index: 1;
+    background-color: #606C5D;
+    justify-content: center;
+    align-items: center;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    font-family: Inter;
+    overflow: hidden;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    min-width: 309px;
+    min-height: 530px;
+    box-shadow: rgba(0, 0, 0, .4) 0px 54px 55px, rgba(0, 0, 0, .35) 0px -12px 30px, rgba(0, 0, 0, .2) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .infomodal {
+      display: flex;
+      justify-content: baseline;
+      width: 90%;
+      height: 90%;
+    }
+  
+    .footerform {
+      margin: 20px;
+      display: flex;
+      justify-content: end;
+      justify-content: space-between;
+  
+      button {
+        margin: 0 10px;
+        font-family: Inter;
+        background: #F1C376;
+        border: none;
+        padding: .3rem 1rem;
+        border-radius: 1rem;
+        transition: .4s ease-in-out;
+        cursor: pointer;
+  
+        &:hover {
+          background: #8e7243;
+        }
+      }
+    }
+  
+    .modalform {
+      width: 100%;
+  
+      .form1 {
+        margin: 10px;
+  
+        .input {
+          margin: 10px 0;
+          border: none;
+          border-radius: 15px;
+          font-family: Inter;
+          padding-left: 10px;
+          height: 30px;
+          width: 95%;
+  
+          &:focus {
+            outline: none;
+          }
+        }
+  
+        .label {
+          font-size: x-large;
+        }
+  
+        .inputarea {
+          font-family: Inter;
+          resize: none;
+          margin: 10px 0;
+          border: none;
+          border-radius: 15px;
+          padding: 10px 0;
+          padding-left: 10px;
+          height: 150px;
+          width: 95%;
+          overflow: hidden;
+  
+          &:focus {
+            outline: none;
+          }
+        }
+  
+        .file{
+          max-width: 250px;
+        }
+
+        .file::-webkit-file-upload-button {
+          visibility: hidden;
+        }
+  
+        .file::before {
+          margin: 0;
+          font-family: Inter;
+          content: 'Seleccione la Imagen del Platillo';
+          display: inline-block;
+          background: #F1C376;
+          padding: .3rem 1rem;
+          border-radius: 1rem;
+          transition: .4s ease-in-out;
+          cursor: pointer;
+  
+         
+        }
+        .file:hover::before {
+            content: 'Seleccione la Imagen del Platillo';
+            background: #8e7243;
+        }
+  
+        .invalid-name {
+          margin: 0px;
+          margin-left: 5px;
+          color: red;
+          font-size: xx-small;
+        }
+  
+       
+      }
+    }
+    #borrar {
+        border: 3px rgb(136, 13, 13) solid;
+        transition: .5 ease-in-out;
+
+        &:hover {
+          background-color: rgb(136, 13, 13);
+
+        
+        }
+      }
+
+      #saveModal {
+        border: 3px #508f19 solid;
+        transition: .5s ease-in-out;
+
+        &:hover {
+          background-color: #508f19;
+        }
+      }
+
+      #closeModal {
+        transition: .5s ease-in-out;
+
+        &:hover {
+          background: #8e7243;
+        }
+      }
+  }
+  

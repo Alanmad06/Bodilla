@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="texto">
+    La Boda Ya Va a Empezar <br />
+    <br />
+    Registrate para Estar en la lista de Invitados !
+  </div>
+  <div class="login">
+    <div class="login_input">
+      <form class="form" #clienteForm="ngForm" (ngSubmit)="registrarse(clienteForm)">
+        <div class="nombres">
+        <div class="form1">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            #nombre="ngModel"
+            class="input_nombre"
+            [(ngModel)]="persona.name"
+           
+            minlength="2"
+            required
+          />
+          <div
+          *ngIf="nombre.errors?.['required'] && nombre.touched"
+          id="invalid-name"
+        >
+          Favor de colocar un Nombre valido
+        </div>
+        <div *ngIf="nombre.errors?.['minlength']" id="invalid-name">
+          Favor de colocar un Nombre de almenos 2 caracteres
+        </div>
+        </div>
+       
+
+        <div class="form1">
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            name="apellido"
+            #apellido="ngModel"
+            [(ngModel)]="persona.lastname"
+            minlength="2"
+            required
+          />
+          <div
+          *ngIf="apellido.errors?.['required'] && apellido.touched"
+          id="invalid-name"
+        >
+          Favor de colocar un Apellido valido
+        </div>
+        <div *ngIf="apellido.errors?.['minlength']" id="invalid-name">
+          Favor de colocar un Apellido de almenos 2 caracteres
+        </div>
+        </div>
+       
+      </div>
+        <div class="form1">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            #email="ngModel"
+            [(ngModel)]="persona.email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            required
+          />
+          <div
+          *ngIf="email.errors?.['required'] && email.touched"
+          id="invalid-name"
+        >
+          Favor de colocar un Email
+        </div>
+        <div *ngIf="email.errors?.['pattern']" id="invalid-name">
+          Favor de colocar un Email valido
+        </div>
+        </div>
+        
+        <div class="form1">
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            name="Password"
+            #Pasword="ngModel"
+            [(ngModel)]="Password"
+            minlength="6"
+            required
+          />
+          <div *ngIf="Pasword.errors?.['required'] && Pasword.touched" id="invalid-name">
+            Favor de colocar una Contraseña 
+          </div>
+          <div *ngIf="Pasword.errors?.['minlength']" id="invalid-name">
+            Favor de colocar una Contraseña mayor de minimo 6 caracteres
+          </div>
+        </div>
+        
+
+        <div class="form1">
+          <label for="cpassword">Confirmar contraseña</label>
+          <input
+            type="password"
+            name="cpassword"
+            #cpasword="ngModel"
+            [(ngModel)]="Cpassword"
+            minlength="6"
+            required
+          />
+          <div *ngIf="cpasword.errors?.['required'] && cpasword.touched" id="invalid-name">
+            Favor de colocar una Contraseña 
+          </div>
+          <div *ngIf="Password !== Cpassword && cpasword.touched" id="invalid-name">
+            Las Contraseñas no coinciden
+          </div>
+          <div *ngIf="cpasword.errors?.['minlength'] " id="invalid-name">
+            Favor de colocar una Contraseña mayor de minimo 6 caracteres
+          </div>
+        </div>
+      
+
+        <div class="footerform">
+          <div class="asistencia">
+            <label for="asistencia">Asistencia</label>
+            <input type="checkbox" id="checkbox" name="assistance" #assistance="ngModel" [(ngModel)]="persona.assistance" (click)="see()"/>
+            <label for="checkbox" class="checkbox"></label>
+          </div>
+        
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+      <hr>
+      <div>
+        <button (click)="signUpGoogle()" class="form__btnGoogle">
+          <img
+            class="logo__google"
+            src="../../../assets/icon-google.svg"
+            alt="logo"
+          />
+          Sign Up with Google
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

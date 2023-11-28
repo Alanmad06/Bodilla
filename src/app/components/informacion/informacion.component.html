@@ -1,0 +1,46 @@
+<div class="info">
+    <div class="container">
+      <div class="titulos">
+        <div class="titulo">
+
+          <h1>Información</h1>  
+         </div>
+         
+      </div>
+     
+     <hr/>
+     <div class="informacion">
+        <section class="ubicacion">
+            <div class="descripcion">
+            <h1>Ubicación</h1>
+            <div class="texto">
+            <h3 id="nombre_templo">Parroquia el Expiatorio del Santísimo Sacramento</h3>
+            <div id="lugar">C. Manuel López Cotilla 935, Col Americana, 
+                            44160 Guadalajara, Jal. </div>
+            <div id="hora">9:00 am</div>
+            </div>
+            </div>
+            <div class="maps">
+            <google-map height="50vh"
+            width="40vw"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="moveMap($event)"
+            (mapMousemove)="move($event)">
+            <map-marker *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              [options]="markerOptions"></map-marker>
+            
+             </google-map>
+
+            </div>
+        </section>
+        
+        
+
+
+     </div>
+
+     
+    </div>
+</div>

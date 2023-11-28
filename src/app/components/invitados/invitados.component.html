@@ -1,0 +1,31 @@
+<div class="invitados">
+    <div class="container">
+        <div class="titulos">
+     <div class="titulo">
+
+      <h1>Invitados</h1>  
+     </div>
+     <div class="botones">
+      
+        <button (click)="toExcel()">Exportar Excel </button>
+       </div>
+       </div>
+     <hr/>
+     <div class="informacion">
+         <div class="invitado" *ngFor="let invitado of invitados" (click)="giveMod(invitado)" [ngClass]="{'isMod': invitado.moderator}">
+            <div class="imagen">
+                <img [src]="invitado.image_aux" >
+            </div>
+            <div class="texto">
+                <p>{{invitado.name}} {{invitado.lastname}}</p>
+                <p *ngIf="invitado.assistance" class="confirmado">CONFIRMADO</p>
+                <p *ngIf="!invitado.assistance" class="confirmadont">SIN CONFIRMAR</p>
+                
+            </div>
+           
+             
+         </div>
+        
+     </div>
+    </div>
+</div>

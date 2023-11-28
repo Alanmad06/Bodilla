@@ -1,0 +1,228 @@
+@import '../../../colores.scss';
+@import url('https://fonts.cdnfonts.com/css/product-sans');
+@import url('https://fonts.cdnfonts.com/css/champagne-limousines');
+
+.container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-image: url("../../../assets/anillos.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+
+.texto {
+  padding: 5%;
+  padding-top: 7%;
+  width: 30%;
+  font-family: 'Champagne & Limousines', sans-serif;
+  font-size: 6vw;
+  flex-grow: 1;
+  text-align:start;
+  color: aliceblue;
+  min-width: 200px;
+}
+
+.nota {
+  padding-top: 2%;
+  font-family: 'Champagne & Limousines', sans-serif;
+  font-size: 1.5vw;
+  flex-grow: 1;
+  text-align:start;
+  color: rgba(240, 248, 255, 0.548);
+  min-width: 200px;
+}
+
+.login {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1%;
+  margin: 5%;
+  padding: 15px 8px  ;
+  background-color: rgba(48, 115, 44, 0.11);
+  border-radius: 15px;
+  min-width: 350px;
+  box-shadow: rgba(0, 0, 0, .4) 0px 54px 55px, 
+              rgba(0, 0, 0, .35) 0px -12px 30px, 
+              rgba(0, 0, 0, .2) 0px 4px 6px, 
+              rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#invalid-name {
+  margin-top: 10px;
+  margin-left: 35px;
+  color: red;
+  font-size: xx-small;
+}
+
+.login_input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+  padding-top: 20px;
+  width: 95%;
+  height: 95%;
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 15px;
+  h1 {
+    font-family: "Inter", Helvetica, sans-serif;
+    color: white;
+  }
+}
+
+.login_input {
+  .form1 {
+    position: relative;
+    font-family: "Inter", Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 25px 7px;
+    
+
+    input {
+      margin: 0 28px;
+      color: #fff;
+      padding: 10px;
+      font: Inter;
+      border: none;
+      border-radius:.7rem;
+      outline: 2px solid #fff;
+      background-color: transparent;
+      transition:  outline-color 500ms;
+      margin-top: 10px;
+      
+      
+  
+      &:is(:focus, :valid) {
+        outline-color: #76b8f1;
+      }
+
+      &:focus + label,
+      &:valid + label,
+      &:not(:placeholder-shown) + label {
+
+        visibility:visible;
+        padding-inline: 5px;
+        transform: translate(0px, -12px) scale(0.8);
+        
+        
+      }
+    }
+
+    label {
+      visibility: hidden;
+      position: absolute;
+      top: -1px;
+      left: 25px;
+      color: #fff;
+      transform: translate(10px, 10px);
+      transition: transform 500ms;
+      color: rgba(240, 248, 255, 0.548);
+    }
+  }
+}
+
+
+
+.form {
+  width: 100%;
+}
+
+.footerform {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.footerform button {
+  margin: 0 32px;
+  margin-bottom: 1rem;
+  font-family: Inter;
+  width: 100%;
+  height: 3rem;
+  background: #76b8f1;
+  border: none;
+  
+  padding: .3rem 1rem;
+  border-radius: 0.7rem;
+  transition: .4s ease-in-out;
+  cursor: pointer;
+}
+
+.footerform button:hover {
+
+  background: #134776;
+  
+}
+
+.form__btnGoogle {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 10px 32px;
+  
+  background-color: white;
+  outline: 1px solid var(--form-borders);
+  color: black;
+  border: none;
+  flex-grow: 1;
+  border-radius: 0.7rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px #1f1f1fcc solid;
+  transition: .2s ease-in-out;
+  font-family: 'Product Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+hr {
+  width: 99%;
+  border: 1px solid #0000008a;
+}
+
+.form__btnGoogle:hover {
+  background-color: #3a3a3a39;
+}
+
+.logo__google {
+  max-width: 25px;
+  margin: 5px;
+  margin-right: 10px;
+}
+
+#logInGoogle{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  flex-grow: 1;
+}

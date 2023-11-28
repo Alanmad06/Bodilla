@@ -1,0 +1,140 @@
+@import "../../../colores.scss";
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/fonts-archive-snell-roundhand/SnellRoundhand.css");
+
+.container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  flex-direction: column;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-image: url("../../../assets/mamaik.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+
+.main {
+  display: flex;
+  /*  border: rebeccapurple 2px solid; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.nombres {
+  
+  color: $color_secundario;
+
+  h1 {
+    font-family: 'Snell Roundhand', serif;
+    font-weight: 500;
+    font-size: 7.5rem;
+    line-height: 1;
+    text-shadow: black 10px 7px 25px;
+  }
+}
+
+.fecha {
+  margin-top: -100px;
+  color: $color_secundario;
+  h2 {
+    font-family: 'Snell Roundhand', serif;
+    font-weight: 500;
+    font-size: 3rem;
+    text-shadow: black 10px 7px 25px;
+  }
+}
+
+.main2 {
+  width: 50%;
+  height: 100vh;
+
+  background-image: linear-gradient(to right, transparent, $color_principal),
+    url("../../../assets/novios2.jpeg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.clock {
+  height: 100%;
+  width: 50%;
+  font-size: 3vw;
+  display: flex;
+  font-family: 'Newsreader', sans-serif;
+  font-size: 4rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(207, 205, 205);
+  /* border: red 2px solid; */
+}
+
+.countdown {
+  margin-right: 10%;
+  display: flex;
+  flex-direction: row;
+  gap: px;
+  align-items: flex-end;
+  font-size: 4rem;
+  text-shadow: black 10px 7px 25px;
+  margin-bottom: 1rem;
+}
+
+.countdown div{
+  margin: 0 10px;
+  
+}
+
+.countdown1{
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.images {
+  position: relative;
+  /* border: yellow 2px solid; */
+  height: 40%;
+}
+
+.info {
+ display: flex;
+ flex-direction: row;
+ gap: 2rem;
+  font-size: 2rem;
+  text-shadow: black 10px 7px 25px;
+}
+
+.image1 {
+  position: absolute;
+  margin-top: -13vh;
+  margin-left: 9vw;
+  height: 110%;
+  width: 50%;
+  font-size: 2vw;
+  background-size: auto;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}

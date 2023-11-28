@@ -1,0 +1,21 @@
+<header  [ngClass]="{'isntHome':!isHome}" class="isHome">
+  <div class="container">
+    <h1 class="logo" routerLink="">Miguel & Paulina</h1>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-list-item"><a routerLink="invitados">Invitados</a></li>
+        <li class="nav-list-item"><a routerLink="menu">Menu</a></li>
+        <li class="nav-list-item">
+          <a routerLink="trajesCentro/novio">Propuestas</a>
+        </li>
+        <li class="nav-list-item">
+          <a routerLink="informacion">Información</a>
+        </li>
+        <li class="nav-list-item"><a routerLink="recuerdos">Recuerdos</a></li>
+        <li class="nav-list-item">
+          <button (click)="logOut()">Cerrar sesión</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

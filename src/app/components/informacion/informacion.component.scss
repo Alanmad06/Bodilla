@@ -1,0 +1,68 @@
+.info{
+    min-height: 100%;
+    width: 100%;
+    overflow:hidden;
+    background-color: #fff;
+}
+.titulos{
+    display: flex;
+}
+
+
+.container {
+ display: grid;
+ margin: 3% 10%;
+
+}
+
+.titulo {
+    width: 100%;
+    font-size: 1.5em;
+    font-family: 'Inter';
+}
+
+hr {
+    width: 100%;
+}
+
+.informacion{
+    margin-top: 30px;
+}
+
+.descripcion{
+    display: flex;
+    flex-direction: column;
+}
+.descripcion h1{
+    flex-grow: 2;
+}
+
+.ubicacion{
+    font-family: 'Inter';
+}
+.texto{
+    display: flex;
+    width: 40vw;
+    flex-direction: row;
+    flex-wrap:wrap;
+
+}
+#lugar{
+    margin-right: 20px;
+    width: 80%;
+    min-width: 100px;
+    
+}
+
+#hora {
+    margin:10px 0;
+    color:#deb56d;  
+}
+
+.maps {
+    border: 5px #F1C376 ;
+    border-style: solid;
+    margin: 20px 0;
+    height:50vh;
+    width:40vw; 
+}
