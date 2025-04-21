@@ -1,3 +1,20 @@
+|A modern and responsive wedding invitation web application built with Angular 16, TypeScript, and Firebase. This project serves as a digital platform to share wedding details, RSVP, and celebrate the special occasion with guests.​
+
+💍 Features
+Elegant Design: A visually appealing interface tailored for wedding themes.
+
+Interactive Components: Engaging elements to enhance user interaction and provide essential wedding information.
+
+Firebase Integration: Utilizes Firebase for hosting and potential backend functionalities.​
+
+🛠 Technologies Used
+Framework: Angular 16
+
+Language: TypeScript
+
+Styling: SCSS
+
+Backend & Auth: Firebase|
 ![image](https://github.com/user-attachments/assets/29ba0fc0-e252-4399-b69d-b0fbcc877cae)
 ![image](https://github.com/user-attachments/assets/31e408a6-ee6b-4d47-ac66-e20411e11286)
 ![image](https://github.com/user-attachments/assets/9ba6958a-d51e-4f95-b623-ecd515e34cce)
